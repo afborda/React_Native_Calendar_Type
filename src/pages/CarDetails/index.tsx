@@ -28,8 +28,15 @@ import {
 } from "./styled";
 import Accessory from "../../components/Accessory";
 import Button from "../../components/Button";
+import { useNavigation } from "@react-navigation/native";
 
 const CardDetails = () => {
+  const navigation = useNavigation<any>();
+
+  function handleSchedulingClick() {
+    navigation.navigate("Scheduling");
+  }
+
   return (
     <Container>
       <Header>
@@ -71,7 +78,10 @@ const CardDetails = () => {
         </About>
       </Content>
       <Footer>
-        <Button title="Confirmar" onPress={() => {}} />
+        <Button
+          title="Escolher periodo do aluguel"
+          onPress={handleSchedulingClick}
+        />
       </Footer>
     </Container>
   );

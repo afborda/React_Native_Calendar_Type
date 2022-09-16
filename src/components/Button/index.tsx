@@ -1,6 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 
+import { useTheme } from "styled-components";
+
 import { Container, Title } from "./styles";
 
 interface Props {
@@ -10,8 +12,9 @@ interface Props {
 }
 
 const Button = ({ title, color, ...rest }: Props) => {
+  const theme = useTheme();
   return (
-    <Container {...rest} color={color}>
+    <Container {...rest} color={color ? color : theme.color.main}>
       <Title>{title}</Title>
     </Container>
   );

@@ -41,8 +41,14 @@ import Accessory from "../../components/Accessory";
 import Button from "../../components/Button";
 import { RFValue } from "react-native-responsive-fontsize";
 import theme from "../../styles/theme";
+import { useNavigation } from "@react-navigation/native";
 
 const SchedulingDetails = () => {
+  const navigation = useNavigation<any>();
+
+  function handleSchedulingCompleteClick() {
+    navigation.navigate("SchedulingComplete");
+  }
   return (
     <Container>
       <Header>
@@ -108,7 +114,11 @@ const SchedulingDetails = () => {
         </RentalPrice>
       </Content>
       <Footer>
-        <Button title="Confirmar" onPress={() => {}} />
+        <Button
+          title="Alugar agora"
+          color={theme.color.success}
+          onPress={handleSchedulingCompleteClick}
+        />
       </Footer>
     </Container>
   );

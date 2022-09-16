@@ -22,6 +22,7 @@ import CardDetails from "./pages/CarDetails";
 import Scheduling from "./pages/Scheduling";
 import SchedulingDetails from "./pages/SchedulingDetails";
 import SchedulingComplete from "./pages/SchedulingComplete";
+import Routes from "./routes";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -47,7 +48,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <View onLayout={onLayoutRootView} />
-      <SchedulingComplete />
+      <Routes />
     </ThemeProvider>
   );
 }

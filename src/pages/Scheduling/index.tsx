@@ -17,6 +17,7 @@ import {
   Footer,
 } from "./styles";
 import Button from "../../components/Button";
+import Calendar from "../../components/Calendar";
 
 const Scheduling = () => {
   const theme = useTheme();
@@ -49,7 +50,9 @@ const Scheduling = () => {
           </DateInfo>
         </RentalPeriod>
       </Header>
-      <Content></Content>
+      <Content>
+        <Calendar />
+      </Content>
 
       <Footer>
         <Button title="Confirmar" onPress={() => {}} />

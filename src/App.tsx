@@ -20,6 +20,7 @@ import theme from "./styles/theme";
 import { View } from "react-native-animatable";
 import CardDetails from "./pages/CarDetails";
 import Scheduling from "./pages/Scheduling";
+import SchedulingDetails from "./pages/SchedulingDetails";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -45,7 +46,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <View onLayout={onLayoutRootView} />
-      <Scheduling />
+      <SchedulingDetails />
     </ThemeProvider>
   );
 }

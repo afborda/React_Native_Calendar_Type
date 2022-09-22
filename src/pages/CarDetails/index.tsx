@@ -28,19 +28,24 @@ import {
 } from "./styled";
 import Accessory from "../../components/Accessory";
 import Button from "../../components/Button";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 const CardDetails = () => {
   const navigation = useNavigation<any>();
+  //const {} = route.params;
 
   function handleSchedulingClick() {
     navigation.navigate("Scheduling");
   }
 
+  function handleBack() {
+    navigation.goBack();
+  }
+
   return (
     <Container>
       <Header>
-        <BackButton onPress={() => {}} />
+        <BackButton onPress={handleBack} />
       </Header>
       <CarImages>
         <ImageSlider

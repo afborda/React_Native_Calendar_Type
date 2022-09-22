@@ -36,8 +36,8 @@ const Home = () => {
       "https://pensecarros.com.br/cms/uploads/porsche-panamera-2-9-v6-e-hybrid-4s-pdk-60f0ebf82bffc.png",
   };
 
-  function handleCarDetails() {
-    navigation.navigate("CarDetails");
+  function handleCarDetails(car: CarDTO) {
+    navigation.navigate("CarDetails", { car });
   }
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const Home = () => {
           data={car}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <CardCar data={item} onPress={handleCarDetails} />
+            <CardCar data={item} onPress={() => handleCarDetails(item)} />
           )}
         />
       )}
